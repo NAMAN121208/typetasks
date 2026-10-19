@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeTasks Pro — Type-Safe Task Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">
+          <span>✓</span>
+        </div>
+        <div>
+          <h1 class="brand-title">TypeTasks <span class="badge-pro">Pro</span></h1>
+          <p class="brand-tagline">100% Type-Safe Task Tracker built with TypeScript</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="app-container">
+      <!-- Input Card -->
+      <section class="card input-card">
+        <form id="task-form" class="task-form">
+          <input
+            id="task-input"
+            type="text"
+            class="input-field"
+            placeholder="What needs to be done? Type and hit Enter..."
+            autocomplete="off"
+            required
+          />
+          <button id="add-btn" type="submit" class="btn btn-primary">
+            <span>+</span> Add Task
+          </button>
+        </form>
+      </section>
+
+      <!-- Filter Chips Bar -->
+      <nav class="filter-nav" aria-label="Task filters">
+        <button class="filter-btn active" data-filter="all">
+          <span>All</span>
+          <span id="count-all" class="count-pill">0</span>
+        </button>
+        <button class="filter-btn" data-filter="todo">
+          <span class="status-dot dot-todo"></span>
+          <span>To Do</span>
+          <span id="count-todo" class="count-pill">0</span>
+        </button>
+        <button class="filter-btn" data-filter="in-progress">
+          <span class="status-dot dot-in-progress"></span>
+          <span>In Progress</span>
+          <span id="count-in-progress" class="count-pill">0</span>
+        </button>
+        <button class="filter-btn" data-filter="done">
+          <span class="status-dot dot-done"></span>
+          <span>Done</span>
+          <span id="count-done" class="count-pill">0</span>
+        </button>
+      </nav>
+
+      <!-- Task List Card -->
+      <section class="card list-card">
+        <ul id="task-list" class="task-list"></ul>
+        <div id="empty-state" class="empty-state hidden">
+          <div class="empty-icon">📝</div>
+          <p class="empty-title">No tasks found</p>
+          <p class="empty-subtitle">Change your filter or add a new task to get started.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Built with <span class="tech-badge">TypeScript</span> • Zero Type Errors • Pure Typed Logic</p>
+    </footer>
+  </div>
+
+  <!-- Load Compiled JavaScript Module -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
